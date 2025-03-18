@@ -22,9 +22,9 @@ def items_by_category(input):
         k = purchase["category"]
         v = purchase["item"]
         if k in result_dict:
-            result_dict[k].append(v)
+            result_dict[k].add(v) #
         else:
-            result_dict[k] = [v]
+            result_dict[k] = {v} # сделал не список, а множество - чтобы исключить дублеров
     return result_dict
 
 print (f'Товары по категориям:{items_by_category(purchases)}')
